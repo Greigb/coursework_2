@@ -29,7 +29,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("greigb/DevOpsCW2")
+        app = docker.build("greigb/devopscw2")
     }
 
     stage('Test image') {
