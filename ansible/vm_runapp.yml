@@ -1,0 +1,15 @@
+- name: Run Docker App on Node
+  hosts: azure
+  user: azureuser
+  become: yes
+
+  vars:
+    DockerID: greigb
+
+  tasks:
+  - name: Get Docker Image
+    command: docker pull "{{DockerID}}"/devopscw2:latest
+
+  - name: Launch Docker Container
+    command: docker container run --rm -d -p 80:80 --name devopscw2 "{{DockerID}}"/devopscw2
+
